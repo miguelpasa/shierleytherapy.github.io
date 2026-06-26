@@ -393,6 +393,9 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
-  .js .reveal, .js .reveal-line, .js .reveal-word { opacity: 1 !important; transform: none !important; }
+  /* no movement under reduced motion — but leave opacity for JS to fade gently.
+     reveal-word is never used on the reduced path, so keep it visible. */
+  .js .reveal, .js .reveal-line { transform: none !important; }
+  .js .reveal-word { opacity: 1 !important; transform: none !important; }
   .hero__scroll-line { animation: none; }
 }

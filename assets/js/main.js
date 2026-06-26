@@ -177,18 +177,46 @@
   });
 
   /* ============================================================
-     If GSAP is unavailable or reduced motion: reveal everything.
+     No GSAP at all: show everything statically and stop.
      ============================================================ */
-  if (!hasGSAP || prefersReduced) {
+  if (!hasGSAP) {
     document.querySelectorAll(".reveal, .reveal-line, .reveal-word").forEach(function (el) {
       el.style.opacity = "1";
       el.style.transform = "none";
     });
-    return; // skip all animation wiring
+    return;
   }
 
   var gsap = window.gsap;
   gsap.registerPlugin(ScrollTrigger);
+
+  /* ============================================================
+     Reduced motion: gentle OPACITY-ONLY fade-ins.
+     No parallax, no mask/scale, no pinning, no scroll hijacking,
+     no slide movement — just soft cross-fades (not vestibular).
+     ============================================================ */
+  if (prefersReduced) {
+    // hero copy fades in on load
+    gsap.to(".hero .reveal-line", { opacity: 1, duration: 0.7, stagger: 0.1, ease: "power1.out" });
+    // section content fades in as it enters the viewport
+    gsap.utils.toArray(".reveal, .reveal-line").forEach(function (el) {
+      if (el.closest(".hero")) return;
+      gsap.to(el, {
+        opacity: 1, duration: 0.6, ease: "power1.out",
+        scrollTrigger: { trigger: el, start: "top 92%" }
+      });
+    });
+    // intro quote: soft fade (it isn't split into words on this path)
+    var quiet = document.querySelector(".reveal-word-wrap");
+    if (quiet) {
+      gsap.fromTo(quiet, { opacity: 0.001 }, {
+        opacity: 1, duration: 0.7, ease: "power1.out",
+        scrollTrigger: { trigger: ".intro", start: "top 82%" }
+      });
+    }
+    window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+    return;
+  }
 
   /* ---------- HERO: masked reveal + parallax ---------- */
   var heroMedia = document.querySelector(".hero__media");
