@@ -290,15 +290,9 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 .process__step {
   display: flex; gap: 1.3rem; align-items: flex-start;
   padding: 1.4rem 1.6rem; border-radius: var(--radius);
-  border: 1px solid color-mix(in srgb, var(--cream) 14%, transparent);
-  /* inactive steps stay readable (AA); active stands out via tint, accent border + scale */
-  opacity: 0.85; transform: translateX(0) scale(0.99);
-  transition: opacity 0.5s var(--ease), background-color 0.5s var(--ease), border-color 0.5s var(--ease), transform 0.5s var(--ease);
-}
-.process__step.is-active {
-  opacity: 1; transform: translateX(0) scale(1);
-  background: color-mix(in srgb, var(--cream) 4%, transparent);
-  border-color: color-mix(in srgb, var(--terracotta) 60%, transparent);
+  /* all steps share one consistent card appearance */
+  border: 1px solid color-mix(in srgb, var(--cream) 16%, transparent);
+  background: color-mix(in srgb, var(--cream) 5%, transparent);
 }
 .process__step-num { font-family: var(--serif); font-size: 1.5rem; color: var(--terracotta); line-height: 1; }
 .process__step h3 { font-size: 1.4rem; color: var(--cream); margin-bottom: 0.35rem; }

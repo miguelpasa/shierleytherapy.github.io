@@ -132,15 +132,47 @@
     sections.forEach(function (s) { io.observe(s); });
   })();
 
-  /* ---------- FAQ: ensure only the answer animates via native details ---------- */
-  /* native <details> handles open/close; nothing required, but close siblings for an accordion feel */
+  /* ---------- FAQ accordion with animated open/close ---------- */
   var faqItems = document.querySelectorAll(".faq__item");
-  faqItems.forEach(function (item) {
-    item.addEventListener("toggle", function () {
-      if (!item.open) return;
-      faqItems.forEach(function (other) {
-        if (other !== item) other.open = false;
+  var faqAnimated = hasGSAP && !prefersReduced;
+
+  function closeFaq(item, animate) {
+    if (!item.open) return;
+    var answer = item.querySelector(".faq__answer");
+    if (animate) {
+      window.gsap.fromTo(answer, { height: answer.offsetHeight, opacity: 1 }, {
+        height: 0, opacity: 0, duration: 0.34, ease: "power2.inOut",
+        onComplete: function () { item.open = false; window.gsap.set(answer, { clearProps: "height,opacity" }); }
       });
+    } else {
+      item.open = false;
+    }
+  }
+  function openFaq(item) {
+    var answer = item.querySelector(".faq__answer");
+    item.open = true;                       // reveal so we can measure target height
+    var h = answer.offsetHeight;
+    window.gsap.fromTo(answer, { height: 0, opacity: 0 }, {
+      height: h, opacity: 1, duration: 0.44, ease: "power2.out",
+      onComplete: function () { window.gsap.set(answer, { clearProps: "height,opacity" }); }
+    });
+  }
+
+  faqItems.forEach(function (item) {
+    var summary = item.querySelector("summary");
+    summary.addEventListener("click", function (e) {
+      if (!faqAnimated) {
+        // native instant toggle; just enforce single-open accordion
+        if (!item.open) faqItems.forEach(function (o) { if (o !== item) o.open = false; });
+        return;
+      }
+      e.preventDefault(); // we drive open/close ourselves to animate it
+      if (item.open) {
+        closeFaq(item, true);
+      } else {
+        faqItems.forEach(function (o) { if (o !== item) closeFaq(o, true); });
+        openFaq(item);
+      }
     });
   });
 
