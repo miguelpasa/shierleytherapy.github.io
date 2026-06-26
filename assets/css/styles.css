@@ -226,7 +226,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 /* ============================================================
    INTRO
    ============================================================ */
-.intro { padding: clamp(6rem, 16vh, 11rem) 0; background: var(--cream); text-align: center; }
+.intro { padding: clamp(4rem, 10vh, 7rem) 0; background: var(--cream); text-align: center; }
 .intro__quote {
   font-family: var(--serif); font-weight: 340;
   font-size: clamp(1.7rem, 1rem + 3.4vw, 3.2rem); line-height: 1.22; letter-spacing: -0.015em;
@@ -238,7 +238,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 /* ============================================================
    ABOUT
    ============================================================ */
-.about { padding: clamp(4rem, 10vh, 8rem) 0; background: var(--sand); border-radius: 40px 40px 0 0; }
+.about { padding: clamp(3rem, 7vh, 5.5rem) 0; background: var(--sand); border-radius: 40px 40px 0 0; }
 .about__grid { display: grid; gap: clamp(2rem, 5vw, 5rem); align-items: center; grid-template-columns: 1fr; }
 .about__media { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 5; box-shadow: 0 30px 60px -30px rgba(58,50,44,0.45); }
 .about__media img { width: 100%; height: 118%; object-fit: cover; object-position: center 38%; }
@@ -251,11 +251,12 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 /* ============================================================
    HELP
    ============================================================ */
-.help { padding: clamp(4rem, 12vh, 9rem) 0; background: var(--sand); }
+/* cream (vs About's sand) so the section change reads clearly */
+.help { padding: clamp(3rem, 8vh, 6rem) 0; background: var(--cream); }
 .help__head { max-width: 28ch; margin-bottom: clamp(2.5rem, 6vh, 4.5rem); }
 .pillars { display: grid; gap: 1.4rem; grid-template-columns: 1fr; }
 .pillar {
-  background: var(--cream); border-radius: var(--radius); padding: clamp(1.6rem, 3vw, 2.4rem);
+  background: var(--sand); border-radius: var(--radius); padding: clamp(1.6rem, 3vw, 2.4rem);
   border: 1px solid color-mix(in srgb, var(--ink) 7%, transparent);
   transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
@@ -268,7 +269,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 .areas__label { font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage-deeper); margin-bottom: 1.5rem; }
 .areas__list { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 .areas__list li {
-  background: var(--cream); border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  background: var(--sand); border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
   padding: 0.6em 1.1em; border-radius: 100px; font-size: 0.95rem;
   transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
@@ -307,7 +308,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 /* ============================================================
    FAQ
    ============================================================ */
-.faq { padding: clamp(4rem, 12vh, 9rem) 0; background: var(--cream); }
+.faq { padding: clamp(3rem, 8vh, 6rem) 0; background: var(--cream); }
 .faq__grid { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: 1fr; align-items: start; }
 .faq__lead { color: var(--ink-soft); margin-top: 1rem; }
 .faq__lead a { color: var(--terra-text); text-decoration: underline; text-underline-offset: 3px; }
@@ -326,7 +327,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 /* ============================================================
    CONTACT
    ============================================================ */
-.contact { position: relative; padding: clamp(5rem, 14vh, 10rem) 0; background: var(--sage-deep); color: var(--cream); overflow: hidden; }
+.contact { position: relative; padding: clamp(3.5rem, 9vh, 6.5rem) 0; background: var(--sage-deep); color: var(--cream); overflow: hidden; }
 .contact__media { position: absolute; inset: -8% 0; z-index: 0; opacity: 0.22; }
 .contact__media img { width: 100%; height: 116%; object-fit: cover; }
 .contact::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(120deg, color-mix(in srgb, var(--sage-deep) 92%, transparent), color-mix(in srgb, var(--ink) 80%, transparent)); }
