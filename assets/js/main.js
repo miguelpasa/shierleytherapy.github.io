@@ -67,8 +67,25 @@
     window.addEventListener("scroll", function () { setNavState(window.scrollY); }, { passive: true });
   }
 
-  /* ---------- smooth anchor navigation ---------- */
-  var NAV_OFFSET = 70;
+  /* ---------- snap anchor navigation ---------- */
+  var NAV_OFFSET = 76;
+  // easeInOutCubic — fast middle, crisp settle = a "snap" feel
+  var snapEase = function (t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+
+  function focusTarget(target) {
+    if (target.hasAttribute("tabindex") || target.tagName === "MAIN") {
+      target.focus({ preventScroll: true });
+    }
+  }
+  function flashTarget(target) {
+    if (prefersReduced) return;
+    var head = target.querySelector(".section-title, .hero__title");
+    if (!head) return;
+    head.classList.remove("snap-flash");
+    void head.offsetWidth; // force reflow so the animation can replay
+    head.classList.add("snap-flash");
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener("click", function (e) {
       var id = link.getAttribute("href");
@@ -77,14 +94,43 @@
       if (!target) return;
       e.preventDefault();
       closeMenu();
+      var done = function () { focusTarget(target); flashTarget(target); };
       if (lenis) {
-        lenis.scrollTo(target, { offset: -NAV_OFFSET, duration: 1.2 });
+        // lock:true blocks input mid-flight so it snaps cleanly into place
+        lenis.scrollTo(target, { offset: -NAV_OFFSET, duration: 1.0, lock: true, easing: snapEase, onComplete: done });
       } else {
         var y = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
         window.scrollTo({ top: y, behavior: prefersReduced ? "auto" : "smooth" });
+        setTimeout(done, prefersReduced ? 0 : 650);
       }
     });
   });
+
+  /* ---------- active section highlighting (aria-current) ---------- */
+  (function () {
+    if (!("IntersectionObserver" in window)) return;
+    var linkMap = {};
+    document.querySelectorAll('.nav__links a[href^="#"], .mobile-menu__links a[href^="#"]').forEach(function (a) {
+      var href = a.getAttribute("href");
+      (linkMap[href] = linkMap[href] || []).push(a);
+    });
+    var sections = ["#about", "#help", "#process", "#faq", "#contact"]
+      .map(function (s) { return document.querySelector(s); })
+      .filter(Boolean);
+    if (!sections.length) return;
+    var clearAll = function () {
+      document.querySelectorAll('.nav__links a[aria-current], .mobile-menu__links a[aria-current]')
+        .forEach(function (a) { a.removeAttribute("aria-current"); });
+    };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        clearAll();
+        (linkMap["#" + en.target.id] || []).forEach(function (a) { a.setAttribute("aria-current", "true"); });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    sections.forEach(function (s) { io.observe(s); });
+  })();
 
   /* ---------- FAQ: ensure only the answer animates via native details ---------- */
   /* native <details> handles open/close; nothing required, but close siblings for an accordion feel */

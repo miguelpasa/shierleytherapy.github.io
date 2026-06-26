@@ -23,13 +23,13 @@
 </head>
 <body>
   <!-- Skip link for accessibility -->
-  <a class="skip-link" href="#intro">Skip to content</a>
+  <a class="skip-link" href="#top">Skip to main content</a>
 
   <!-- ===== NAV ===== -->
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#top" class="nav__brand" aria-label="Shierly Therapy home">
-        <span class="nav__brand-mark">✦</span> Shierly&nbsp;Therapy
+        <span class="nav__brand-mark" aria-hidden="true">✦</span> Shierly&nbsp;Therapy
       </a>
 
       <nav class="nav__links" aria-label="Primary">
@@ -61,7 +61,7 @@
     </p>
   </div>
 
-  <main id="top">
+  <main id="top" tabindex="-1">
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
@@ -108,7 +108,7 @@
     <section class="about" id="about">
       <div class="container about__grid">
         <div class="about__media" data-parallax-img>
-          <img src="assets/images/about-portrait.jpg" alt="A calm, welcoming therapist" loading="lazy" />
+          <img src="assets/images/about-shierly.webp" alt="Shierly, smiling warmly on a city street in the evening" loading="lazy" />
         </div>
         <div class="about__text">
           <p class="section-eyebrow reveal">About</p>
@@ -123,7 +123,7 @@
             and empowered. Therapy here extends beyond conversation — into deeper self-understanding,
             relational shifts, and forward movement.
           </p>
-          <ul class="about__creds reveal">
+          <ul class="about__creds reveal" role="list">
             <li>ACA Level 2 Registered Counsellor</li>
             <li>East Melbourne, VIC &amp; Telehealth Australia-wide</li>
             <li>Adults &amp; young people</li>
@@ -160,7 +160,7 @@
 
         <div class="areas">
           <p class="areas__label reveal">Areas of support</p>
-          <ul class="areas__list">
+          <ul class="areas__list" role="list">
             <li class="reveal">Anxiety &amp; stress</li>
             <li class="reveal">Relationship challenges</li>
             <li class="reveal">Life transitions &amp; adjustments</li>
@@ -262,7 +262,7 @@
           <p class="section-eyebrow">Book a session</p>
           <h2 class="section-title">Let's take the first step, together.</h2>
           <p>Reach out for a free, no-pressure 15-minute introductory call. There's no crisis required to begin — just a willingness to start.</p>
-          <ul class="contact__details">
+          <ul class="contact__details" role="list">
             <li><span>Email</span><a href="mailto:hello@shierlytherapy.com.au">hello@shierlytherapy.com.au</a></li>
             <li><span>SMS</span><a href="sms:0435557712">043 555 7712</a></li>
             <li><span>Location</span>East Melbourne, VIC &middot; Telehealth Australia-wide</li>
@@ -298,7 +298,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="#top" class="nav__brand"><span class="nav__brand-mark">✦</span> Shierly&nbsp;Therapy</a>
+        <a href="#top" class="nav__brand"><span class="nav__brand-mark" aria-hidden="true">✦</span> Shierly&nbsp;Therapy</a>
         <p>A warm and collaborative space to better understand yourself and move forward with clarity.</p>
       </div>
       <nav class="footer__nav" aria-label="Footer">
