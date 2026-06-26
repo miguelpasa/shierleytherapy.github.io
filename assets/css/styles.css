@@ -148,12 +148,16 @@ main:focus, main:focus-visible { outline: none; }
 .nav.is-scrolled .nav__cta:hover { background: var(--terra-text); border-color: var(--terra-text); color: var(--cream); }
 .nav:not(.is-scrolled) .nav__cta:hover { background: var(--cream); color: var(--ink); }
 
-.nav__toggle { display: none; background: none; border: 0; cursor: pointer; padding: 0.5rem; }
+/* color:inherit stops iOS Safari from tinting the button (and its
+   currentColor bars) with the default system blue */
+.nav__toggle { display: none; background: none; border: 0; cursor: pointer; padding: 0.5rem; color: inherit; -webkit-tap-highlight-color: transparent; }
 .nav__toggle span {
   display: block; width: 26px; height: 2px; background: currentColor; border-radius: 2px;
   transition: transform 0.35s var(--ease), opacity 0.25s var(--ease);
 }
 .nav__toggle span + span { margin-top: 6px; }
+/* when the (light sand) menu is open, the bar + brand must be dark to read */
+body.menu-open .nav { color: var(--ink); text-shadow: none; }
 body.menu-open .nav__toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
 body.menu-open .nav__toggle span:nth-child(2) { opacity: 0; }
 body.menu-open .nav__toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
@@ -388,6 +392,11 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 @media (max-width: 880px) {
   .nav__links { display: none; }
   .nav__toggle { display: block; }
+}
+
+/* on phones the scroll cue collides with the wrapped hero buttons — hide it */
+@media (max-width: 700px) {
+  .hero__scroll { display: none; }
 }
 
 /* ============================================================
