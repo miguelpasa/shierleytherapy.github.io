@@ -66,12 +66,6 @@ html.lenis, html.lenis body { height: auto; }
 /* sections land below the fixed nav when navigated to */
 section[id] { scroll-margin-top: var(--nav-h); }
 
-/* brief "snap landed" cue on a section heading after menu navigation */
-.snap-flash { animation: snapFlash 0.7s var(--ease); }
-@keyframes snapFlash {
-  0%   { transform: translateY(6px); opacity: 0.6; }
-  100% { transform: translateY(0);   opacity: 1; }
-}
 
 .section-eyebrow {
   font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;

@@ -77,15 +77,6 @@
       target.focus({ preventScroll: true });
     }
   }
-  function flashTarget(target) {
-    if (prefersReduced) return;
-    var head = target.querySelector(".section-title, .hero__title");
-    if (!head) return;
-    head.classList.remove("snap-flash");
-    void head.offsetWidth; // force reflow so the animation can replay
-    head.classList.add("snap-flash");
-  }
-
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener("click", function (e) {
       var id = link.getAttribute("href");
@@ -94,7 +85,7 @@
       if (!target) return;
       e.preventDefault();
       closeMenu();
-      var done = function () { focusTarget(target); flashTarget(target); };
+      var done = function () { focusTarget(target); };
       if (lenis) {
         // lock:true blocks input mid-flight so it snaps cleanly into place
         lenis.scrollTo(target, { offset: -NAV_OFFSET, duration: 1.0, lock: true, easing: snapEase, onComplete: done });
