@@ -226,9 +226,12 @@
     gsap.set(heroMedia, { clipPath: "inset(14% 14% 14% 14% round 24px)", scale: 1.18 });
     heroTl.to(heroMedia, { clipPath: "inset(0% 0% 0% 0% round 0px)", scale: 1, duration: 1.5, ease: "power4.inOut" });
   }
-  heroTl.from(".hero .reveal-line", {
-    yPercent: 110, opacity: 0, duration: 1, stagger: 0.12, ease: "power3.out"
-  }, "-=0.9");
+  // fromTo with an explicit visible end + clearProps so no transform lingers
+  // (the natural CSS state of .reveal-line is opacity:0, with no transform).
+  heroTl.fromTo(".hero .reveal-line",
+    { y: 40, opacity: 0 },
+    { y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: "power3.out", clearProps: "transform" },
+    "-=0.9");
 
   // hero background parallax on scroll
   if (heroMedia) {
