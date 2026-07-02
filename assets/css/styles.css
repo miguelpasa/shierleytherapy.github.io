@@ -340,29 +340,45 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
    AREAS OF SUPPORT
    ============================================================ */
 .areas-section {
+  position: relative;
   padding: clamp(4rem, 10vh, 7rem) 0;
-  background: linear-gradient(180deg, var(--mid-blue) 0%, var(--light-blue) 100%);
+  color: var(--white);
+  overflow: hidden;
   text-align: center;
 }
+.areas-section__media {
+  position: absolute; inset: -8% 0; z-index: 0;
+}
+.areas-section__media img { width: 100%; height: 116%; object-fit: cover; object-position: center 60%; }
+.areas-section__scrim {
+  position: absolute; inset: 0;
+  background: rgba(30, 45, 65, 0.72);
+}
+.areas-section__inner { position: relative; z-index: 2; }
 .areas-section__title {
   font-size: clamp(2rem, 1.4rem + 4vw, 5rem);
-  letter-spacing: 0.1em; text-transform: uppercase;
+  letter-spacing: 0.12em; text-transform: uppercase;
   margin-bottom: clamp(2.5rem, 6vh, 4rem);
-  color: var(--navy);
+  color: var(--white);
 }
 .areas__list {
-  display: flex; flex-wrap: wrap; gap: 0.9rem;
-  justify-content: center; max-width: 800px; margin-inline: auto;
+  display: flex; flex-direction: column; gap: 0;
+  max-width: 720px; margin-inline: auto;
 }
-.areas__list li {
-  font-family: var(--body);
-  background: rgba(255,255,255,0.45);
-  border: 1px solid rgba(30,51,85,0.2);
-  padding: 0.65em 1.3em; border-radius: 100px;
-  font-size: 0.95rem; color: var(--navy);
-  transition: background-color 0.3s var(--ease), color 0.3s var(--ease);
+.area {
+  padding: clamp(1.2rem, 3vh, 1.8rem) 0;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
 }
-.areas__list li:hover { background: var(--navy); color: var(--white); }
+.area:first-child { border-top: 1px solid rgba(255,255,255,0.18); }
+.area h3 {
+  font-family: var(--serif); font-size: clamp(0.85rem, 0.75rem + 0.5vw, 1rem);
+  font-weight: 600; letter-spacing: 0.1em;
+  color: var(--white); margin-bottom: 0.5rem;
+}
+.area p {
+  font-family: var(--body); font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem);
+  color: rgba(255,255,255,0.78); line-height: 1.65; max-width: 58ch; margin-inline: auto;
+}
 
 /* ============================================================
    ABOUT

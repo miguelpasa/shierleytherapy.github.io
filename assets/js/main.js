@@ -249,7 +249,7 @@
     });
   });
 
-  /* ---------- PROCESS: pin + active step ---------- */
+  /* ---------- PROCESS: pin + active step (desktop only) ---------- */
   var processSection = document.querySelector(".process");
   var steps = gsap.utils.toArray(".process__step");
   var bars = gsap.utils.toArray(".process__bar");
@@ -260,15 +260,23 @@
     };
     setActive(0);
 
-    ScrollTrigger.create({
-      trigger: processSection,
-      start: "top top",
-      end: "+=" + (steps.length * 60) + "%",
-      pin: ".process__sticky",
-      scrub: true,
-      onUpdate: function (self) {
-        var idx = Math.min(steps.length - 1, Math.floor(self.progress * steps.length));
-        setActive(idx);
+    ScrollTrigger.matchMedia({
+      "(min-width: 760px)": function () {
+        ScrollTrigger.create({
+          trigger: processSection,
+          start: "top top",
+          end: "+=" + (steps.length * 60) + "%",
+          pin: ".process__sticky",
+          scrub: true,
+          onUpdate: function (self) {
+            var idx = Math.min(steps.length - 1, Math.floor(self.progress * steps.length));
+            setActive(idx);
+          }
+        });
+      },
+      "(max-width: 759px)": function () {
+        steps.forEach(function (s) { s.classList.add("is-active"); });
+        bars.forEach(function (b) { b.style.setProperty("--fill", "100%"); });
       }
     });
   }
