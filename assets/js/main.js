@@ -249,37 +249,6 @@
     });
   });
 
-  /* ---------- PROCESS: pin + active step (desktop only) ---------- */
-  var processSection = document.querySelector(".process");
-  var steps = gsap.utils.toArray(".process__step");
-  var bars = gsap.utils.toArray(".process__bar");
-  if (processSection && steps.length) {
-    var setActive = function (index) {
-      steps.forEach(function (s, i) { s.classList.toggle("is-active", i === index); });
-      bars.forEach(function (b, i) { b.style.setProperty("--fill", i <= index ? "100%" : "0%"); });
-    };
-    setActive(0);
-
-    ScrollTrigger.matchMedia({
-      "(min-width: 760px)": function () {
-        ScrollTrigger.create({
-          trigger: processSection,
-          start: "top top",
-          end: "+=" + (steps.length * 60) + "%",
-          pin: ".process__sticky",
-          scrub: true,
-          onUpdate: function (self) {
-            var idx = Math.min(steps.length - 1, Math.floor(self.progress * steps.length));
-            setActive(idx);
-          }
-        });
-      },
-      "(max-width: 759px)": function () {
-        steps.forEach(function (s) { s.classList.add("is-active"); });
-        bars.forEach(function (b) { b.style.setProperty("--fill", "100%"); });
-      }
-    });
-  }
 
   /* ---------- about section subtle lift ---------- */
   gsap.from(".about__media", {
