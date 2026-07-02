@@ -105,7 +105,7 @@
       var href = a.getAttribute("href");
       (linkMap[href] = linkMap[href] || []).push(a);
     });
-    var sections = ["#about", "#help", "#process", "#faq", "#contact"]
+    var sections = ["#about", "#approach", "#offer", "#areas", "#process", "#faq", "#contact"]
       .map(function (s) { return document.querySelector(s); })
       .filter(Boolean);
     if (!sections.length) return;
@@ -197,14 +197,6 @@
         scrollTrigger: { trigger: el, start: "top 92%" }
       });
     });
-    // intro quote: soft fade (it isn't split into words on this path)
-    var quiet = document.querySelector(".reveal-word-wrap");
-    if (quiet) {
-      gsap.fromTo(quiet, { opacity: 0.001 }, {
-        opacity: 1, duration: 0.7, ease: "power1.out",
-        scrollTrigger: { trigger: ".intro", start: "top 82%" }
-      });
-    }
     window.addEventListener("load", function () { ScrollTrigger.refresh(); });
     return;
   }
@@ -248,22 +240,6 @@
       gsap.to(batch, { y: 0, opacity: 1, duration: 0.85, ease: "power3.out", stagger: 0.09, overwrite: true });
     }
   });
-
-  /* ---------- intro quote: word-by-word warm reveal ---------- */
-  var quoteWrap = document.querySelector(".reveal-word-wrap");
-  if (quoteWrap) {
-    var words = quoteWrap.textContent.trim().split(/\s+/);
-    quoteWrap.innerHTML = words.map(function (w) {
-      return '<span class="reveal-word" style="display:inline-block">' + w + "</span>";
-    }).join(" ");
-    gsap.fromTo(quoteWrap.querySelectorAll(".reveal-word"),
-      { opacity: 0.12, y: 10 },
-      {
-        opacity: 1, y: 0, ease: "none", stagger: 0.04,
-        scrollTrigger: { trigger: ".intro", start: "top 70%", end: "center 55%", scrub: true }
-      }
-    );
-  }
 
   /* ---------- image parallax for [data-parallax-img] ---------- */
   gsap.utils.toArray("[data-parallax-img] img").forEach(function (img) {

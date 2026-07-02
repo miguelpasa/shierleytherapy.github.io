@@ -4,6 +4,16 @@ Marketing site for **Shierly Therapy** — counselling & psychotherapy in East M
 
 A single-page static site with a fullscreen masked-parallax hero and GSAP scroll animations, in a warm, comfy palette. No build step — just HTML, CSS and JS.
 
+## Project brief
+
+This site is a **replacement** for the existing live site at https://www.shierlytherapy.com.au.
+
+- **Copy:** Match the copy from the live site exactly (same wording, same sections).
+- **Colour palette:** Use the same colour palette as the live site.
+- **Assets:** All images and media must come **only** from the approved Google Drive folder:
+  https://drive.google.com/drive/folders/1QHuXifazU8jCK-bp92xf5OEUHTULGJh6
+  Do **not** use Unsplash or any other external image source.
+
 ## Structure
 
 ```
@@ -58,4 +68,7 @@ python -m http.server 8000
 
 ## Image credits
 
-Photography from [Unsplash](https://unsplash.com) under the free Unsplash License (attribution not required, included as courtesy). Replace any image in `assets/images/` with your own at the same filename to swap it out.
+All assets must be sourced from the approved Google Drive folder:
+https://drive.google.com/drive/folders/1QHuXifazU8jCK-pb92xf5OEUHTULGJh6
+
+Do **not** use Unsplash or any other third-party image source. The placeholder Unsplash images currently in `assets/images/` are temporary and must be replaced with approved assets before launch.
