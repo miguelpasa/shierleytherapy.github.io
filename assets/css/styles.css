@@ -40,7 +40,7 @@ html, body { scrollbar-gutter: stable; }
 body {
   font-family: var(--body);
   font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
-  line-height: 1.7;
+  line-height: 1.9;
   color: var(--navy);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
@@ -224,6 +224,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
   margin-bottom: 1.2rem;
 }
 .hero__title span { display: block; }
+.hero__title-img { width: clamp(280px, 60vw, 720px); height: auto; display: block; margin-inline: auto; mix-blend-mode: screen; }
 .hero__eyebrow {
   font-family: var(--serif); font-size: clamp(1rem, 0.8rem + 1vw, 1.4rem);
   letter-spacing: 0.1em; color: var(--white); margin-bottom: 0.5rem;
@@ -441,6 +442,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 .faq__grid { display: grid; gap: clamp(2rem, 5vw, 4rem); grid-template-columns: 1fr; align-items: start; }
 .faq__lead { color: var(--ink-soft); margin-top: 1rem; }
 .faq__lead a { color: var(--blue-accent); text-decoration: underline; text-underline-offset: 3px; }
+.faq__more { padding-top: 2.5rem; }
 .faq__item { border-bottom: 1px solid rgba(30,51,85,0.15); }
 .faq__item summary {
   list-style: none; cursor: pointer; padding: 1.3rem 0;
@@ -620,9 +622,24 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
    ABOUT PAGE — bio section
    ============================================================ */
 .about-page { background: var(--white); padding: clamp(4rem, 8vh, 7rem) 0; }
-.about-page__grid { max-width: 720px; }
-.about-page__text { display: flex; flex-direction: column; gap: 1.4rem; }
-.about-page__text p { font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); line-height: 1.8; color: var(--navy); }
+.about-page__grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1060px;
+}
+@media (max-width: 860px) {
+  .about-page__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-page__img { order: -1; }
+}
+.about-page__text { display: flex; flex-direction: column; gap: 1.6rem; }
+.about-page__text p { font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); line-height: 1.9; color: var(--navy); }
+.about-page__img img { width: 100%; border-radius: 12px; object-fit: cover; }
+
+/* About photo full-width strip */
+.about-photo { padding: clamp(3rem, 6vw, 5rem) 0; background: var(--light-blue); }
+.about-photo__img { width: 100%; max-width: 860px; margin-inline: auto; border-radius: 12px; object-fit: cover; max-height: 520px; }
 .about__creds {
   margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.6rem;
   padding-left: 0; list-style: none;
