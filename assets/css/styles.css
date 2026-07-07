@@ -491,6 +491,8 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 }
 .contact__form textarea { resize: vertical; min-height: 110px; }
 .contact__form-note { font-size: 0.82rem; color: var(--ink-soft); text-align: center; }
+.contact__form-consent { font-size: 0.82rem; color: var(--ink-soft); line-height: 1.6; }
+.contact__form-consent a { color: var(--blue-accent); text-decoration: underline; text-underline-offset: 3px; }
 .contact__form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .contact__fieldset {
   border: 1.5px solid rgba(30,51,85,0.2); border-radius: var(--radius);
@@ -514,7 +516,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 .footer__inner { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
 .footer .nav__brand { color: var(--white); line-height: 0; }
 .footer__acknowledgement { margin-top: 1.2rem; max-width: 44ch; font-size: 0.88rem; line-height: 1.75; color: rgba(255,255,255,0.6); font-style: italic; }
-.footer__nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
+.footer__nav { display: flex; flex-wrap: wrap; column-gap: 1.2rem; row-gap: 0.3rem; }
 .footer__nav a { font-size: 0.92rem; opacity: 0.75; transition: opacity 0.25s var(--ease); }
 .footer__nav a:hover { opacity: 1; }
 .footer__meta { font-size: 0.85rem; line-height: 1.9; opacity: 0.6; }
