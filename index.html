@@ -27,7 +27,8 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#top" class="nav__brand" aria-label="Shierly Therapy home">
-        Shierly&nbsp;Therapy
+        <img class="nav__logo nav__logo--dark" src="assets/images/logo-blue.png" alt="Shierly Therapy" />
+        <img class="nav__logo nav__logo--light" src="assets/images/logo.png" alt="" aria-hidden="true" />
       </a>
 
       <nav class="nav__links" aria-label="Primary">
@@ -35,7 +36,7 @@
         <a href="#approach">How I Can Help</a>
         <a href="#faq">FAQ</a>
         <a href="blog/">Blog</a>
-        <a href="#contact" class="nav__cta">Book a Session</a>
+        <a href="https://cal.com/shierly-therapy" class="nav__cta" target="_blank" rel="noopener">Book a Session</a>
       </nav>
 
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -51,7 +52,7 @@
       <a href="#approach">How I Can Help</a>
       <a href="#faq">FAQ</a>
       <a href="blog/">Blog</a>
-      <a href="#contact" class="mobile-menu__cta">Book a Session</a>
+      <a href="https://cal.com/shierly-therapy" class="mobile-menu__cta" target="_blank" rel="noopener">Book a Session</a>
     </nav>
     <p class="mobile-menu__contact">
       <a href="mailto:hello@shierlytherapy.com.au">hello@shierlytherapy.com.au</a><br />
@@ -161,48 +162,48 @@
         <h2 class="areas-section__title">Areas of Support</h2>
       </div>
       <div class="container areas-section__inner">
-        <ul class="areas__list" role="list">
-          <li class="area reveal">
-            <h3>Relationship &amp; Interpersonal Difficulties</h3>
-            <p>Navigating conflict, communication breakdowns, or painful patterns in romantic relationships, friendships, or family.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Anxiety, Stress &amp; Emotional Regulation</h3>
-            <p>Persistent worry, overthinking, or difficulty managing overwhelming emotions in daily life.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Burnout &amp; Work-Related Stress</h3>
-            <p>Feeling chronically depleted, disengaged, or overwhelmed by the demands of work and responsibility.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Self-Esteem &amp; Confidence</h3>
-            <p>Persistent self-doubt, inner criticism, or feeling like you are never quite enough.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Procrastination, Perfectionism &amp; Self-Sabotage</h3>
-            <p>Stuck in cycles of avoidance, impossibly high standards, or patterns that keep getting in your own way.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Family Dynamics &amp; Past Wounds</h3>
-            <p>Unresolved family relationships or past experiences that continue to shape how you feel and relate today.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Grief &amp; Loss</h3>
-            <p>Navigating the loss of a loved one, a relationship, or a significant chapter of life.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Life Transitions &amp; Uncertainty</h3>
-            <p>Feeling lost, stuck, or uncertain during major life changes or crossroads.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Cultural Identity &amp; Intergenerational Challenges</h3>
-            <p>Navigating multiple cultural identities, family expectations, or the tension between where you come from and where you are.</p>
-          </li>
-          <li class="area reveal">
-            <h3>Loneliness &amp; Disconnection</h3>
-            <p>Feeling isolated or unseen, even when surrounded by others.</p>
-          </li>
-        </ul>
+        <div class="areas__list reveal">
+          <details class="area__item">
+            <summary>Relationship &amp; Interpersonal Difficulties</summary>
+            <div class="area__answer"><p>Navigating conflict, communication breakdowns, or painful patterns in romantic relationships, friendships, or family.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Anxiety, Stress &amp; Emotional Regulation</summary>
+            <div class="area__answer"><p>Persistent worry, overthinking, or difficulty managing overwhelming emotions in daily life.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Burnout &amp; Work-Related Stress</summary>
+            <div class="area__answer"><p>Feeling chronically depleted, disengaged, or overwhelmed by the demands of work and responsibility.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Self-Esteem &amp; Confidence</summary>
+            <div class="area__answer"><p>Persistent self-doubt, inner criticism, or feeling like you are never quite enough.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Procrastination, Perfectionism &amp; Self-Sabotage</summary>
+            <div class="area__answer"><p>Stuck in cycles of avoidance, impossibly high standards, or patterns that keep getting in your own way.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Family Dynamics &amp; Past Wounds</summary>
+            <div class="area__answer"><p>Unresolved family relationships or past experiences that continue to shape how you feel and relate today.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Grief &amp; Loss</summary>
+            <div class="area__answer"><p>Navigating the loss of a loved one, a relationship, or a significant chapter of life.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Life Transitions &amp; Uncertainty</summary>
+            <div class="area__answer"><p>Feeling lost, stuck, or uncertain during major life changes or crossroads.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Cultural Identity &amp; Intergenerational Challenges</summary>
+            <div class="area__answer"><p>Navigating multiple cultural identities, family expectations, or the tension between where you come from and where you are.</p></div>
+          </details>
+          <details class="area__item">
+            <summary>Loneliness &amp; Disconnection</summary>
+            <div class="area__answer"><p>Feeling isolated or unseen, even when surrounded by others.</p></div>
+          </details>
+        </div>
       </div>
     </section>
 
@@ -210,7 +211,7 @@
     <section class="about" id="about">
       <div class="container about__grid">
         <div class="about__media" data-parallax-img>
-          <img src="assets/images/shierly-about.jpg" alt="Shierly, smiling warmly" loading="lazy" />
+          <img src="assets/images/shierly-about-2.jpg" alt="Shierly, smiling warmly" loading="lazy" />
         </div>
         <div class="about__text">
           <p class="section-eyebrow reveal">About</p>
@@ -220,9 +221,10 @@
             through emotional, relational, and life challenges.
           </p>
           <p class="reveal">
-            My experience working across counselling, psychotherapy, and community settings has
-            shaped my commitment to creating a space where clients feel supported, understood, and
-            empowered to navigate life with greater clarity and confidence.
+            My years of experience working with individuals across clinical, school, and community
+            settings, both in Australia and Indonesia, have shaped my commitment to creating a space
+            where clients feel supported, understood, and empowered to navigate life with greater
+            clarity and confidence.
           </p>
           <ul class="about__creds reveal" role="list">
             <li>ACA Level 2 Registered Counsellor</li>
@@ -355,7 +357,9 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="#top" class="nav__brand">Shierly&nbsp;Therapy</a>
+        <a href="#top" class="nav__brand">
+          <img class="nav__logo nav__logo--light" src="assets/images/logo.png" alt="Shierly Therapy" />
+        </a>
         <p class="footer__acknowledgement">
           Shierly Therapy acknowledges the Wurundjeri Woi-wurrung people of the Kulin Nation as the
           Traditional Custodians of the lands on which we work, and pays respect to Elders past,
@@ -367,7 +371,7 @@
         <a href="#approach">How I Can Help</a>
         <a href="#faq">FAQ</a>
         <a href="blog/">Blog</a>
-        <a href="#contact">Book a Session</a>
+        <a href="https://cal.com/shierly-therapy" target="_blank" rel="noopener">Book a Session</a>
       </nav>
       <div class="footer__meta">
         <p>ABN 51 876 392 617</p>

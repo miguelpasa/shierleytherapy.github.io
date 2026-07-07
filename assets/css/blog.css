@@ -29,9 +29,9 @@
 .blog-hero__scrim {
   position: absolute; inset: 0;
   background: linear-gradient(to bottom,
-    rgba(15,25,45,0.25) 0%,
-    rgba(15,25,45,0.65) 70%,
-    rgba(15,25,45,0.85) 100%);
+    rgba(15,25,45,0.45) 0%,
+    rgba(15,25,45,0.78) 70%,
+    rgba(15,25,45,0.92) 100%);
 }
 .blog-hero__content {
   position: relative; z-index: 2;

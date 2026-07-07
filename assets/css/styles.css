@@ -135,11 +135,16 @@ main:focus, main:focus-visible { outline: none; }
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav__brand {
-  font-family: var(--serif); font-size: 1.1rem; font-weight: 400;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  display: inline-flex; align-items: center; gap: 0.4rem;
-  line-height: 1.2;
+  display: inline-flex; align-items: center;
 }
+.nav__logo {
+  height: 40px; width: auto; display: block;
+}
+.nav__logo--light { display: none; }
+.nav:not(.is-scrolled) .nav__logo--dark { display: none; }
+.nav:not(.is-scrolled) .nav__logo--light { display: block; }
+.footer .nav__logo--dark { display: none; }
+.footer .nav__logo--light { display: block; }
 .nav__links { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2.2rem); }
 .nav__links a { font-family: var(--body); font-size: 0.95rem; position: relative; }
 .nav__links a:not(.nav__cta)::after {
@@ -199,12 +204,12 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
   position: absolute; inset: 0;
   background:
     linear-gradient(to bottom,
-      rgba(15,25,45,0.55) 0%,
-      rgba(15,25,45,0.35) 28%,
-      rgba(15,25,45,0.30) 50%,
-      rgba(15,25,45,0.60) 75%,
-      rgba(15,25,45,0.82) 100%),
-    rgba(15,25,45,0.12);
+      rgba(15,25,45,0.28) 0%,
+      rgba(15,25,45,0.18) 28%,
+      rgba(15,25,45,0.15) 50%,
+      rgba(15,25,45,0.35) 75%,
+      rgba(15,25,45,0.55) 100%),
+    rgba(200,160,80,0.05);
 }
 .hero__content {
   position: relative; z-index: 2;
@@ -360,24 +365,39 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
   padding: clamp(2.5rem, 6vh, 4rem) 0 clamp(4rem, 10vh, 7rem);
 }
 .areas__list {
-  display: flex; flex-direction: column; align-items: center; gap: 1rem;
-  max-width: 760px; margin-inline: auto;
+  max-width: 760px; margin-inline: auto; text-align: left;
 }
-.area {
-  background: rgba(255,255,255,0.45);
-  border-radius: 100px;
-  padding: clamp(0.9rem, 2vh, 1.2rem) clamp(1.5rem, 4vw, 2.5rem);
-  width: 100%;
+.area__item {
+  border-bottom: 1px solid rgba(30,51,85,0.18);
 }
-.area h3 {
-  font-family: var(--serif); font-size: clamp(0.82rem, 0.75rem + 0.4vw, 0.95rem);
-  font-weight: 600; letter-spacing: 0.08em;
-  color: var(--navy); margin-bottom: 0.3rem;
+.area__item:first-child {
+  border-top: 1px solid rgba(30,51,85,0.18);
 }
-.area p {
+.area__item summary {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.1rem 0;
+  font-family: var(--serif); font-size: clamp(0.9rem, 0.82rem + 0.35vw, 1.05rem);
+  font-weight: 600; letter-spacing: 0.06em; color: var(--navy);
+  cursor: pointer; list-style: none; user-select: none;
+  gap: 1rem;
+}
+.area__item summary::-webkit-details-marker { display: none; }
+.area__item summary::after {
+  content: "+"; font-size: 1.25rem; line-height: 1; color: var(--blue-accent);
+  flex-shrink: 0;
+  transition: transform 0.3s var(--ease);
+}
+.area__item[open] > summary::after {
+  transform: rotate(45deg);
+}
+.area__item summary:hover { color: var(--blue-accent); }
+.area__answer {
+  overflow: hidden;
+}
+.area__answer p {
   font-family: var(--body); font-size: clamp(0.88rem, 0.82rem + 0.3vw, 1rem);
-  color: var(--navy); line-height: 1.6; max-width: 56ch; margin-inline: auto;
-  opacity: 0.85;
+  color: var(--navy); line-height: 1.7; opacity: 0.82;
+  padding-bottom: 1.2rem;
 }
 
 /* ============================================================
@@ -475,7 +495,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
    ============================================================ */
 .footer { background: var(--navy); color: rgba(255,255,255,0.75); padding: clamp(3rem, 8vh, 5rem) 0 2rem; }
 .footer__inner { display: grid; gap: 2.5rem; grid-template-columns: 1fr; }
-.footer .nav__brand { color: var(--white); }
+.footer .nav__brand { color: var(--white); line-height: 0; }
 .footer__acknowledgement { margin-top: 1.2rem; max-width: 44ch; font-size: 0.88rem; line-height: 1.75; color: rgba(255,255,255,0.6); font-style: italic; }
 .footer__nav { display: flex; flex-wrap: wrap; gap: 1.2rem; }
 .footer__nav a { font-size: 0.92rem; opacity: 0.75; transition: opacity 0.25s var(--ease); }

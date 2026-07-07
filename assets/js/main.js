@@ -20,9 +20,10 @@
 
   /* ---------- nav scrolled state ---------- */
   var nav = document.getElementById("nav");
+  var hasHero = !!document.querySelector(".hero");
   function setNavState(y) {
     if (!nav) return;
-    nav.classList.toggle("is-scrolled", y > 40);
+    nav.classList.toggle("is-scrolled", !hasHero || y > 40);
   }
   setNavState(window.scrollY);
 
@@ -163,6 +164,49 @@
       } else {
         faqItems.forEach(function (o) { if (o !== item) closeFaq(o, true); });
         openFaq(item);
+      }
+    });
+  });
+
+  /* ---------- Areas accordion with animated open/close ---------- */
+  var areaItems = document.querySelectorAll(".area__item");
+  var areaAnimated = hasGSAP && !prefersReduced;
+
+  function closeArea(item, animate) {
+    if (!item.open) return;
+    var answer = item.querySelector(".area__answer");
+    if (animate) {
+      window.gsap.fromTo(answer, { height: answer.offsetHeight, opacity: 1 }, {
+        height: 0, opacity: 0, duration: 0.34, ease: "power2.inOut",
+        onComplete: function () { item.open = false; window.gsap.set(answer, { clearProps: "height,opacity" }); }
+      });
+    } else {
+      item.open = false;
+    }
+  }
+  function openArea(item) {
+    var answer = item.querySelector(".area__answer");
+    item.open = true;
+    var h = answer.offsetHeight;
+    window.gsap.fromTo(answer, { height: 0, opacity: 0 }, {
+      height: h, opacity: 1, duration: 0.44, ease: "power2.out",
+      onComplete: function () { window.gsap.set(answer, { clearProps: "height,opacity" }); }
+    });
+  }
+
+  areaItems.forEach(function (item) {
+    var summary = item.querySelector("summary");
+    summary.addEventListener("click", function (e) {
+      if (!areaAnimated) {
+        if (!item.open) areaItems.forEach(function (o) { if (o !== item) o.open = false; });
+        return;
+      }
+      e.preventDefault();
+      if (item.open) {
+        closeArea(item, true);
+      } else {
+        areaItems.forEach(function (o) { if (o !== item) closeArea(o, true); });
+        openArea(item);
       }
     });
   });
