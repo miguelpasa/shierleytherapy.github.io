@@ -20,7 +20,7 @@
 
   /* type */
   --serif:  "Cinzel", Georgia, "Times New Roman", serif;
-  --body:   "PT Serif", Georgia, "Times New Roman", serif;
+  --body:   "Lato", system-ui, sans-serif;
 
   /* layout */
   --maxw:   1200px;
