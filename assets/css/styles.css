@@ -642,6 +642,34 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
 .hich-cta p { font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem); color: var(--navy); opacity: 0.8; }
 
 /* ============================================================
+   HOW I CAN HELP — areas section (standalone page version)
+   ============================================================ */
+.hich-areas { background: var(--white); padding: clamp(4rem, 8vh, 7rem) 0; }
+.hich-areas__inner { max-width: 720px; display: flex; flex-direction: column; gap: 2.5rem; }
+
+/* ============================================================
+   HOW I CAN HELP — services section
+   ============================================================ */
+.hich-services { background: var(--grey-bg); padding: clamp(4rem, 8vh, 7rem) 0; }
+.hich-services__inner { max-width: 720px; display: flex; flex-direction: column; gap: 3.5rem; }
+.hich-service { display: flex; flex-direction: column; gap: 1rem; }
+.hich-service__title {
+  font-family: var(--serif); font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.3rem);
+  font-weight: 400; letter-spacing: 0.05em; color: var(--navy);
+  padding-bottom: 0.75rem; border-bottom: 1px solid rgba(30,51,85,0.15);
+}
+.hich-service p { font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); line-height: 1.8; color: var(--navy); }
+.hich-service__list {
+  list-style: none; padding: 0; margin-top: 0.25rem;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.hich-service__list li {
+  padding-left: 1.5em; position: relative;
+  font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); color: var(--navy); line-height: 1.7;
+}
+.hich-service__list li::before { content: "–"; position: absolute; left: 0; color: var(--blue-accent); }
+
+/* ============================================================
    ABOUT PAGE — professional experience section
    ============================================================ */
 .about-experience {
