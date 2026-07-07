@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Shierly Therapy</title>
-  <meta name="description" content="Thoughts on counselling, psychotherapy, and mental health from Shierly Therapy." />
+  <title>About Shierly — Shierly Therapy</title>
+  <meta name="description" content="Learn about Shierly, a Registered Counsellor and Psychotherapist based in East Melbourne offering in-person and telehealth counselling." />
   <meta name="theme-color" content="#1E3355" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,6 @@
 
   <script>document.documentElement.classList.add('js');</script>
   <link rel="stylesheet" href="../assets/css/styles.css" />
-  <link rel="stylesheet" href="../assets/css/blog.css" />
 </head>
 <body>
   <a class="skip-link" href="#top">Skip to main content</a>
@@ -21,15 +20,15 @@
   <!-- ===== NAV ===== -->
   <header class="nav is-scrolled" id="nav">
     <div class="nav__inner">
-      <a href="../" class="nav__brand" aria-label="Shierly Therapy home">
+      <a href="/" class="nav__brand" aria-label="Shierly Therapy home">
         <img class="nav__logo nav__logo--dark" src="../assets/images/logo-blue.png" alt="Shierly Therapy" />
         <img class="nav__logo nav__logo--light" src="../assets/images/logo.png" alt="" aria-hidden="true" />
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="/about/">About</a>
+        <a href="/about/" aria-current="page">About</a>
         <a href="/how-i-can-help/">How I Can Help</a>
         <a href="/#faq">FAQ</a>
-        <a href="./" aria-current="true">Blog</a>
+        <a href="/blog/">Blog</a>
         <a href="https://cal.com/shierly-therapy" class="nav__cta" target="_blank" rel="noopener">Book a Session</a>
       </nav>
       <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -43,7 +42,7 @@
       <a href="/about/">About</a>
       <a href="/how-i-can-help/">How I Can Help</a>
       <a href="/#faq">FAQ</a>
-      <a href="./">Blog</a>
+      <a href="/blog/">Blog</a>
       <a href="https://cal.com/shierly-therapy" class="mobile-menu__cta" target="_blank" rel="noopener">Book a Session</a>
     </nav>
     <p class="mobile-menu__contact">
@@ -54,40 +53,64 @@
 
   <main id="top" tabindex="-1">
 
-    <!-- ===== BLOG HEADER ===== -->
-    <section class="blog-hero">
-      <div class="blog-hero__media">
-        <img src="../assets/images/hero-birds.jpg" alt="A flock of birds in flight against a warm blue sky" />
-        <div class="blog-hero__scrim"></div>
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-hero">
+      <div class="page-hero__media" data-parallax-img>
+        <img src="../assets/images/shierly-about-2.jpg" alt="Shierly, smiling warmly" />
+        <div class="page-hero__scrim"></div>
       </div>
-      <div class="blog-hero__content">
-        <p class="blog-hero__eyebrow">Shierly Therapy</p>
-        <h1 class="blog-hero__title">Blog</h1>
-        <p class="blog-hero__sub">Thoughts on counselling, psychotherapy, and mental health.</p>
+      <div class="page-hero__content container">
+        <p class="page-hero__eyebrow">About</p>
+        <h1 class="page-hero__title">Hi, I'm Shierly.</h1>
       </div>
     </section>
 
-    <!-- ===== POSTS GRID ===== -->
-    <section class="blog-listing">
+    <!-- ===== BIO ===== -->
+    <section class="about-page" id="about">
+      <div class="container about-page__grid">
+        <div class="about-page__text">
+          <p class="section-eyebrow reveal">About Me</p>
+          <p class="reveal">
+            I am a Registered Counsellor and Psychotherapist supporting adults and young people
+            through emotional, relational, and life challenges.
+          </p>
+          <p class="reveal">
+            My years of experience working with individuals across clinical, school, and community
+            settings, both in Australia and Indonesia, have shaped my commitment to creating a space
+            where clients feel supported, understood, and empowered to navigate life with greater
+            clarity and confidence.
+          </p>
+          <ul class="about__creds reveal" role="list">
+            <li>ACA Level 2 Registered Counsellor</li>
+            <li>East Melbourne, VIC &amp; Telehealth Australia-wide</li>
+            <li>Working with adults &amp; young people</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW I WORK ===== -->
+    <section class="approach" id="approach">
       <div class="container">
-        <div class="blog-grid">
+        <h2 class="section-title approach__title reveal">How I Work</h2>
 
-          <article class="blog-card">
-            <a href="counsellor-psychotherapist-psychologist.html" class="blog-card__link" tabindex="-1" aria-hidden="true">
-              <div class="blog-card__image">
-                <img src="../assets/images/landscape-rocky.jpg" alt="Rocky coastline" loading="lazy" />
-              </div>
-            </a>
-            <div class="blog-card__body">
-              <time class="blog-card__date" datetime="2026-07-07">7 July 2026</time>
-              <h2 class="blog-card__title">
-                <a href="counsellor-psychotherapist-psychologist.html">Counsellor, Psychotherapist, or Psychologist: What's the Difference and Which One Do You Need?</a>
-              </h2>
-              <p class="blog-card__excerpt">If you've been thinking about seeking mental health support but feel confused by the different titles and roles out there, you're not alone.</p>
-              <a href="counsellor-psychotherapist-psychologist.html" class="blog-card__read">Read more</a>
-            </div>
+        <div class="pillars">
+          <article class="pillar reveal">
+            <h3>1. Warm &amp;<br>Collaborative</h3>
+            <p>I create a space where you feel safe to explore, supported by guidance, reflection, and practical strategies tailored to your needs.</p>
           </article>
+          <article class="pillar reveal">
+            <h3>2. Integrative &amp;<br>Tailored</h3>
+            <p>I draw on evidence-based approaches and adapt therapy to what works best for you.</p>
+          </article>
+          <article class="pillar reveal">
+            <h3>3. Culturally<br>Responsive</h3>
+            <p>I value the impact of culture, identity, relationships, and life experiences in shaping your experiences.</p>
+          </article>
+        </div>
 
+        <div class="approach__cta reveal">
+          <a href="https://cal.com/shierly-therapy" class="btn btn--solid" target="_blank" rel="noopener">Book a Free Intro Call</a>
         </div>
       </div>
     </section>
@@ -98,7 +121,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <a href="../" class="nav__brand">
+        <a href="/" class="nav__brand">
           <img class="nav__logo nav__logo--light" src="../assets/images/logo.png" alt="Shierly Therapy" />
         </a>
         <p class="footer__acknowledgement">
