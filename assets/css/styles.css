@@ -745,7 +745,7 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
    ABOUT PAGE — enquiry form section
    ============================================================ */
 .about-enquiry {
-  background: var(--grey-bg);
+  background: var(--navy);
   padding: clamp(4rem, 8vh, 7rem) 0;
 }
 .about-enquiry__inner {
@@ -753,7 +753,14 @@ body.menu-open .mobile-menu { transform: translateY(0); visibility: visible; }
   grid-template-columns: 1fr;
 }
 .about-enquiry__intro { display: flex; flex-direction: column; gap: 1rem; }
-.about-enquiry__intro p { font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); color: var(--navy); max-width: 48ch; }
+.about-enquiry__intro .section-eyebrow { color: var(--light-blue); }
+.about-enquiry__intro .section-title { color: var(--white); }
+.about-enquiry__intro p { font-size: clamp(1rem, 0.95rem + 0.3vw, 1.125rem); color: rgba(255,255,255,0.78); max-width: 38ch; }
+.about-enquiry .contact__form {
+  background: var(--white);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 8px;
+}
 @media (min-width: 760px) {
-  .about-enquiry__inner { grid-template-columns: 0.9fr 1.1fr; align-items: start; }
+  .about-enquiry__inner { grid-template-columns: 1fr 1.4fr; align-items: start; }
 }
