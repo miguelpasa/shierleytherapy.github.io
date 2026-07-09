@@ -57,12 +57,15 @@
 
   <main id="top" tabindex="-1">
 
-    <!-- ===== PAGE HEADER ===== -->
-    <section class="page-header">
-      <div class="container page-header__inner">
-        <p class="section-eyebrow">FAQ</p>
-        <h1 class="page-header__title">Good things<br>to know.</h1>
-        <p class="page-header__sub">Answers to some of the most common questions about counselling, sessions, and how to get started.</p>
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="page-hero__media" data-parallax-img>
+        <img src="../assets/images/hero-photo-1.jpg" alt="Scenic nature landscape" />
+        <div class="page-hero__scrim"></div>
+      </div>
+      <div class="page-hero__content container">
+        <p class="page-hero__eyebrow">FAQ</p>
+        <h1 class="page-hero__title">Good things<br>to know.</h1>
       </div>
     </section>
 
@@ -184,12 +187,12 @@
           </fieldset>
 
           <label>
-            <span>Message <small>(optional)</small></span>
-            <textarea name="message" rows="4" autocomplete="off" placeholder="Feel free to share a bit about what's bringing you here, or any questions you have."></textarea>
+            <span>Message</span>
+            <textarea name="message" rows="4" autocomplete="off" placeholder="Feel free to share a bit about what's bringing you here, or any questions you have." required></textarea>
           </label>
           <label>
-            <span>How did you hear about Shierly Therapy? <small>(optional)</small></span>
-            <input type="text" name="referral" autocomplete="off" />
+            <span>How did you hear about Shierly Therapy?</span>
+            <input type="text" name="referral" autocomplete="off" required />
           </label>
           <p class="contact__form-consent">By submitting this form, you consent to me collecting and using your personal information to respond to your enquiry. Your information will be handled in accordance with the <a href="/privacy-policy/">Privacy Policy</a>.</p>
           <button type="submit" class="btn btn--solid btn--block">Send message</button>
