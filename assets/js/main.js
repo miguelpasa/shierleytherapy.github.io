@@ -260,7 +260,7 @@
         .then(function (json) {
           if (json.success) {
             form.reset();
-            showToast("Message sent! Shierly will be in touch within 1–2 business days.");
+            showToast("Message sent! I will be in touch within 1–2 business days.");
           } else {
             showToast("Something went wrong. Please try again or email directly.");
           }
