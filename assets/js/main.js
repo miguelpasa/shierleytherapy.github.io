@@ -211,6 +211,70 @@
     });
   });
 
+  /* ---------- toast + async form submission ---------- */
+  var toast = document.createElement("div");
+  toast.className = "toast";
+  toast.setAttribute("role", "status");
+  toast.setAttribute("aria-live", "polite");
+  toast.innerHTML = '<p class="toast__msg"></p><button class="toast__close" aria-label="Dismiss">&#x2715;</button>';
+  document.body.appendChild(toast);
+
+  var toastMsg = toast.querySelector(".toast__msg");
+  var toastTimer;
+
+  function showToast(msg) {
+    toastMsg.textContent = msg;
+    toast.classList.remove("is-hiding");
+    toast.classList.add("is-visible");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(hideToast, 6000);
+  }
+  function hideToast() {
+    clearTimeout(toastTimer);
+    toast.classList.add("is-hiding");
+    setTimeout(function () { toast.classList.remove("is-visible", "is-hiding"); }, 420);
+  }
+
+  toast.querySelector(".toast__close").addEventListener("click", hideToast);
+
+  var txStart = 0, tyStart = 0;
+  toast.addEventListener("touchstart", function (e) {
+    txStart = e.touches[0].clientX;
+    tyStart = e.touches[0].clientY;
+  }, { passive: true });
+  toast.addEventListener("touchend", function (e) {
+    var dx = e.changedTouches[0].clientX - txStart;
+    var dy = e.changedTouches[0].clientY - tyStart;
+    if (dy > 40 || Math.abs(dx) > 60) hideToast();
+  }, { passive: true });
+
+  document.querySelectorAll(".contact__form").forEach(function (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('[type="submit"]');
+      var orig = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending…";
+      fetch("https://api.web3forms.com/submit", { method: "POST", body: new FormData(form) })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          if (json.success) {
+            form.reset();
+            showToast("Message sent! Shierly will be in touch within 1–2 business days.");
+          } else {
+            showToast("Something went wrong. Please try again or email directly.");
+          }
+        })
+        .catch(function () {
+          showToast("Something went wrong. Please try again or email directly.");
+        })
+        .finally(function () {
+          btn.disabled = false;
+          btn.textContent = orig;
+        });
+    });
+  });
+
   /* ============================================================
      No GSAP at all: show everything statically and stop.
      ============================================================ */
