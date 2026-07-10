@@ -1,7 +1,7 @@
 # #15 Switch Google Fonts to Async Load Pattern
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 20 min
 **Impact:** High (CWV)
 **Tags:** PERFORMANCE

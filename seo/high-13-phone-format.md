@@ -1,7 +1,7 @@
 # #13 Standardise Phone Format; Change sms: to tel: Links
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 20 min
 **Impact:** High (NAP + UX)
 **Tags:** LOCAL SEO, TECHNICAL

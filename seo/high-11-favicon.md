@@ -1,7 +1,7 @@
 # #11 Add Favicon to All Pages
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 10 min
 **Impact:** Medium
 **Tags:** TECHNICAL

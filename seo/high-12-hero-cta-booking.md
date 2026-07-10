@@ -1,7 +1,7 @@
 # #12 Add Second Hero CTA + Move Phone to Header
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 1 hr
 **Impact:** High (conversion)
 **Tags:** SXO, CONVERSION

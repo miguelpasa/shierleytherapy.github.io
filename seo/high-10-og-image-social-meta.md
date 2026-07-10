@@ -1,7 +1,7 @@
 # #10 Fix og:image; Add OG + Twitter Card Meta to All Pages
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 45 min
 **Impact:** High
 **Tags:** TECHNICAL, ON-PAGE

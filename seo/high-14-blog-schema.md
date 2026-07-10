@@ -1,7 +1,7 @@
 # #14 Add BlogPosting + BreadcrumbList + WebSite JSON-LD
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 1 hr
 **Impact:** High
 **Tags:** SCHEMA, GEO

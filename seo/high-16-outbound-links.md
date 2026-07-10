@@ -1,7 +1,7 @@
 # #16 Add Outbound Links to ACA, AHPRA, and MHFA Australia
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 30 min
 **Impact:** High (E-E-A-T)
 **Tags:** GEO, CONTENT

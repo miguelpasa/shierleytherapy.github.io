@@ -1,7 +1,7 @@
 # #18 Confirm and Link ACA Find a Counsellor Profile
 
 **Priority:** HIGH
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 30 min
 **Impact:** High (citations)
 **Tags:** LOCAL SEO, AUTHORITY

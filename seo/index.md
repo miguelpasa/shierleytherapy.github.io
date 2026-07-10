@@ -30,15 +30,15 @@
 
 ## High Priority — Fix Within 1 Week (9 tasks)
 
-- [ ] [#10 Fix og:image; add OG + Twitter Card to all pages](high-10-og-image-social-meta.md)
-- [ ] [#11 Add favicon to all pages](high-11-favicon.md)
-- [ ] [#12 Add second hero CTA + move phone to header](high-12-hero-cta-booking.md)
-- [ ] [#13 Standardise phone format; change sms: to tel: links](high-13-phone-format.md)
-- [ ] [#14 Add BlogPosting + BreadcrumbList + WebSite JSON-LD](high-14-blog-schema.md)
-- [ ] [#15 Switch Google Fonts to async load pattern](high-15-google-fonts-async.md)
-- [ ] [#16 Add outbound links to ACA, AHPRA, MHFA Australia](high-16-outbound-links.md)
+- [x] [#10 Fix og:image; add OG + Twitter Card to all pages](high-10-og-image-social-meta.md)
+- [x] [#11 Add favicon to all pages](high-11-favicon.md)
+- [x] [#12 Add second hero CTA + move phone to header](high-12-hero-cta-booking.md)
+- [x] [#13 Standardise phone format; change sms: to tel: links](high-13-phone-format.md)
+- [x] [#14 Add BlogPosting + BreadcrumbList + WebSite JSON-LD](high-14-blog-schema.md)
+- [x] [#15 Switch Google Fonts to async load pattern](high-15-google-fonts-async.md)
+- [x] [#16 Add outbound links to ACA, AHPRA, MHFA Australia](high-16-outbound-links.md)
 - [ ] [#17 Add fees section to How I Can Help; expand content](high-17-how-i-can-help-content.md)
-- [ ] [#18 Confirm and link ACA Find a Counsellor profile](high-18-aca-directory-profile.md)
+- [x] [#18 Confirm and link ACA Find a Counsellor profile](high-18-aca-directory-profile.md)
 
 ## Medium Priority — Fix Within 1 Month (7 tasks)
 
