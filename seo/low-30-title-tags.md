@@ -1,7 +1,7 @@
 # #30 Improve Title Tags on About + How I Can Help Pages
 
 **Priority:** LOW
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 10 min
 **Impact:** Medium
 **Tags:** ON-PAGE

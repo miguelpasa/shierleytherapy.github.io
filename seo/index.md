@@ -53,12 +53,12 @@
 ## Low Priority — Backlog (8 tasks)
 
 - [ ] [#26 Register on Psychology Today, Good Therapy, TherapyTribe](low-26-directory-listings.md)
-- [ ] [#27 Fix generic alt text on hero images](low-27-hero-alt-text.md)
+- [x] [#27 Fix generic alt text on hero images](low-27-hero-alt-text.md)
 - [ ] [#28 Link LinkedIn profile from About page](low-28-linkedin-profile.md)
-- [ ] [#29 Surface blog posts on homepage](low-29-blog-on-homepage.md)
-- [ ] [#30 Improve title tags on About + How I Can Help](low-30-title-tags.md)
+- [x] [#29 Surface blog posts on homepage](low-29-blog-on-homepage.md)
+- [x] [#30 Improve title tags on About + How I Can Help](low-30-title-tags.md)
 - [ ] [#31 Replace duplicate coastal landscape image on homepage](low-31-coastal-image-duplicate.md)
-- [ ] [#32 Add Privacy Policy link to site-wide footer](low-32-privacy-policy-footer.md)
+- [x] [#32 Add Privacy Policy link to site-wide footer](low-32-privacy-policy-footer.md)
 - [ ] [#33 Implement IndexNow](low-33-indexnow.md)
 
 ---

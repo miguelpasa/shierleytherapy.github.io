@@ -1,7 +1,7 @@
 # #29 Surface Blog Posts on Homepage
 
 **Priority:** LOW
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 1 hr
 **Impact:** Medium
 **Tags:** SXO, INTERNAL LINKING

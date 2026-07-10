@@ -1,7 +1,7 @@
 # #32 Add Privacy Policy Link to Site-Wide Footer
 
 **Priority:** LOW
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 15 min
 **Impact:** Low
 **Tags:** TECHNICAL

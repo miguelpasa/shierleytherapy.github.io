@@ -1,7 +1,7 @@
 # #27 Fix Generic Alt Text on Hero Images
 
 **Priority:** LOW
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 15 min
 **Impact:** Medium
 **Tags:** TECHNICAL, ACCESSIBILITY
