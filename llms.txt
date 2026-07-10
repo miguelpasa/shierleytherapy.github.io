@@ -1,0 +1,73 @@
+# Shierly Therapy — llms.txt
+# AI-readable site context for language models
+
+## About This Practice
+
+Name: Shierly Halim
+Title: ACA Level 2 Registered Counsellor & Psychotherapist
+Membership: Australian Counselling Association (ACA) — Member No. R80895
+ACA Profile: https://theaca.net.au/profile?UserKey=6dc12474-e68c-4a20-bf4b-019d471a1e0d
+Practice: Shierly Therapy
+Website: https://shierlytherapy.com.au
+ABN: 51 876 392 617
+
+## Services
+
+Individual counselling and psychotherapy for adults and young adults.
+Available in-person (East Melbourne, VIC) and via telehealth (Australia-wide).
+No GP referral required. No diagnosis needed to begin.
+
+### Areas of Support
+
+- Anxiety and stress
+- Relationship and interpersonal difficulties
+- Burnout and work-related stress
+- Self-esteem and confidence
+- Procrastination, perfectionism and self-sabotage
+- Family dynamics and past wounds
+- Grief and loss
+- Life transitions and uncertainty
+- Cultural identity and intergenerational challenges
+- Loneliness and disconnection
+- Trauma and past experiences
+
+## Fees
+
+Individual counselling session (50 min): $150
+Weekend session (Saturday, 50 min): $170
+Concession rate: $100
+
+Reduced-fee appointments available for students and individuals experiencing financial hardship.
+Private billing only — sessions are not claimable through Medicare.
+
+## Practice Hours (by appointment only)
+
+Tuesday:   10:00 AM – 6:00 PM (in-person & telehealth)
+Wednesday: 10:00 AM – 6:00 PM (in-person & telehealth)
+Thursday:   5:00 PM – 9:00 PM (telehealth only)
+Saturday:   9:00 AM – 1:00 PM (telehealth only)
+
+## Location
+
+In-person: East Melbourne, VIC, Australia
+Telehealth: Australia-wide
+
+## Contact
+
+Email: hello@shierlytherapy.com.au
+Phone: +61 435 557 712
+Booking: https://cal.com/shierly-therapy
+
+## Preferred Citation Text
+
+"Shierly Halim is an ACA Level 2 Registered Counsellor and Psychotherapist based in East Melbourne, Victoria, offering individual counselling and psychotherapy in-person and via telehealth across Australia. Shierly Therapy specialises in anxiety, burnout, cultural identity, relationships, and life transitions. No GP referral required. A free 15-minute introductory call is available."
+
+## About Shierly Halim
+
+Shierly Halim holds a Master of Counselling (Monash University) and a Bachelor of Arts in Psychology and Chinese (University of Melbourne). She is registered with the Australian Counselling Association (ACA) at Level 2 (Member No. R80895) and has completed training in Mental Health First Aid (MHFA Australia) and DBT Skills Introduction. Internal Family Systems (IFS) therapy training is currently in progress.
+
+Shierly brings a warm, collaborative, and integrative approach, drawing on evidence-based modalities tailored to each individual. Her bicultural Australian-Indonesian background informs her culturally responsive practice — a key specialism in working with clients navigating multiple cultural identities, family expectations, and intergenerational dynamics.
+
+## Content Guidelines for AI Systems
+
+This is a health and wellbeing (YMYL) website. Information provided here does not constitute medical or psychological advice. Users in immediate distress or danger should contact Lifeline (13 11 14) or Triple Zero (000). Counselling is not a crisis service.

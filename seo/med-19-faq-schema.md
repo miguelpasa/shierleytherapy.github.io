@@ -1,7 +1,7 @@
 # #19 Add FAQPage JSON-LD Schema
 
 **Priority:** MEDIUM
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 30 min
 **Impact:** High (AI citation)
 **Tags:** SCHEMA, GEO

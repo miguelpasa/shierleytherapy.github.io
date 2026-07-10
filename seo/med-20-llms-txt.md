@@ -1,7 +1,7 @@
 # #20 Create llms.txt for AI-Readable Site Context
 
 **Priority:** MEDIUM
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 30 min
 **Impact:** High (AI readiness)
 **Tags:** GEO

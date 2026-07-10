@@ -1,7 +1,7 @@
 # #21 Remove Required from "How Did You Hear About Us?" Form Field
 
 **Priority:** MEDIUM
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 5 min
 **Impact:** High (conversion)
 **Tags:** SXO, CONVERSION

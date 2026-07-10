@@ -1,7 +1,7 @@
 # #22 Promote Cultural Identity Specialism to Hero / Dedicated Section
 
 **Priority:** MEDIUM
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 1 hr
 **Impact:** High (differentiation)
 **Tags:** SXO, CONTENT

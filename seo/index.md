@@ -42,10 +42,10 @@
 
 ## Medium Priority — Fix Within 1 Month (7 tasks)
 
-- [ ] [#19 Add FAQPage JSON-LD schema](med-19-faq-schema.md)
-- [ ] [#20 Create llms.txt](med-20-llms-txt.md)
-- [ ] [#21 Remove required from referral form field](med-21-form-referral-field.md)
-- [ ] [#22 Promote cultural identity specialism to hero / dedicated section](med-22-cultural-identity-specialism.md)
+- [x] [#19 Add FAQPage JSON-LD schema](med-19-faq-schema.md)
+- [x] [#20 Create llms.txt](med-20-llms-txt.md)
+- [x] [#21 Remove required from referral form field](med-21-form-referral-field.md)
+- [x] [#22 Promote cultural identity specialism to hero / dedicated section](med-22-cultural-identity-specialism.md)
 - [ ] [#23 Create /online-counselling/ page](med-23-online-counselling-page.md)
 - [ ] [#24 Expand blog post to 1,500+ words](med-24-expand-blog-post.md)
 - [ ] [#25 Publish 2–3 new blog posts](med-25-new-blog-posts.md)
