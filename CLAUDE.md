@@ -2,10 +2,20 @@
 
 ## What this project is
 
-A static single-page replacement for the existing live site at https://www.shierlytherapy.com.au.
+A static multi-page site for Shierly Therapy, replacing the previous live site at https://www.shierlytherapy.com.au.
 
-- No build tool. Pure HTML (`index.html`), CSS (`assets/css/styles.css`), JS (`assets/js/main.js`).
-- Deployed via GitHub Pages from the `main` branch.
+- No build tool. Pure HTML, CSS (`assets/css/styles.css`, `assets/css/blog.css`), JS (`assets/js/main.js`).
+- Deployed via GitHub Pages from the `main` branch to the custom domain `shierlytherapy.com.au`.
+
+## Pages
+
+- `index.html` — Homepage
+- `about/index.html` — About Shierly
+- `how-i-can-help/index.html` — Areas of support
+- `faq/index.html` — FAQ
+- `contact/index.html` — Contact & enquiry form
+- `blog/index.html` — Blog listing
+- `privacy-policy/index.html` — Privacy policy
 
 ## Key rules
 
@@ -15,8 +25,10 @@ A static single-page replacement for the existing live site at https://www.shier
    https://drive.google.com/drive/folders/1QHuXifazU8jCK-bp92xf5OEUHTULGJh6
    Never source images from Unsplash or any other third-party provider.
 
+## Forms
+
+All enquiry forms use **Web3Forms** (`https://api.web3forms.com/submit`). The access key is already set — do not change the form provider or remove the key. A toast notification confirms submission.
+
 ## Pending tasks
 
-- Replace placeholder Formspree form ID in `index.html` (search for `YOUR_FORM_ID`).
-- Replace temporary Unsplash placeholder images in `assets/images/` with assets from the Google Drive folder above.
-- Audit copy against the live site and align any differences.
+- Audit copy across all pages against the live site and align any differences.
