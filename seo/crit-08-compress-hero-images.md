@@ -1,7 +1,7 @@
 # #8 Compress All Hero Images to WebP ≤200 KB
 
 **Priority:** CRITICAL
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Medium — 2 hrs
 **Impact:** Very High (CWV/LCP)
 **Tags:** PERFORMANCE, CWV

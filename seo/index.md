@@ -25,7 +25,7 @@
 - [x] [#5 Add canonical tags to all 8 pages](crit-05-canonical-tags.md)
 - [x] [#6 Add practitioner's full last name sitewide](crit-06-practitioners-full-name.md)
 - [x] [#7 Add LocalBusiness + Person JSON-LD schema](crit-07-json-ld-schema.md)
-- [ ] [#8 Compress all hero images to WebP ≤200 KB](crit-08-compress-hero-images.md)
+- [x] [#8 Compress all hero images to WebP ≤200 KB](crit-08-compress-hero-images.md)
 - [ ] [#9 Claim and optimise Google Business Profile](crit-09-google-business-profile.md)
 
 ## High Priority — Fix Within 1 Week (9 tasks)
