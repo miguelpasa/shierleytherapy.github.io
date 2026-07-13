@@ -1,7 +1,7 @@
 # #2 Submit Sitemap in Google Search Console
 
 **Priority:** CRITICAL
-**Status:** `todo`
+**Status:** `done`
 **Effort:** Low — 5 min
 **Impact:** Very High
 **Tags:** TECHNICAL, CRAWLABILITY

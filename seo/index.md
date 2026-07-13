@@ -19,7 +19,7 @@
 ## Critical — Fix Immediately (9 tasks)
 
 - [x] [#1 Deploy robots.txt + sitemap.xml](crit-01-deploy-robots-sitemap.md)
-- [ ] [#2 Submit sitemap in Google Search Console](crit-02-submit-sitemap-gsc.md)
+- [x] [#2 Submit sitemap in Google Search Console](crit-02-submit-sitemap-gsc.md)
 - [x] [#3 Add crisis/emergency resources to footer and Contact page](crit-03-crisis-resources.md)
 - [x] [#4 Fix homepage H1 — replace image with text element](crit-04-fix-homepage-h1.md)
 - [x] [#5 Add canonical tags to all 8 pages](crit-05-canonical-tags.md)
