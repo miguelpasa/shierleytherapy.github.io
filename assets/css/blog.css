@@ -217,6 +217,76 @@
 }
 
 /* ============================================================
+   ARTICLE — Comparison table
+   ============================================================ */
+.post-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 2.5rem 0;
+  border: 1px solid rgba(30,51,85,0.12);
+  border-radius: 8px;
+}
+
+.post-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: clamp(0.82rem, 0.78rem + 0.18vw, 0.9rem);
+  line-height: 1.6;
+}
+
+.post-table thead th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(255,255,255,0.12);
+}
+.post-table thead th:first-child { width: 168px; }
+.post-table thead th:last-child { border-right: none; }
+
+.post-table tbody th,
+.post-table tbody td {
+  padding: 0.8rem 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(30,51,85,0.1);
+  border-right: 1px solid rgba(30,51,85,0.1);
+  color: var(--ink-soft);
+}
+.post-table tbody th:last-child,
+.post-table tbody td:last-child { border-right: none; }
+.post-table tbody tr:last-child th,
+.post-table tbody tr:last-child td { border-bottom: none; }
+
+.post-table tbody th {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 0.82rem;
+  color: var(--navy);
+  background: rgba(30,51,85,0.04);
+  white-space: nowrap;
+}
+.post-table tbody tr:nth-child(even) td { background: rgba(30,51,85,0.02); }
+
+.post-body__inner .post-table-note {
+  font-size: 0.875rem;
+  font-style: italic;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  border-left: 3px solid rgba(30,51,85,0.2);
+  padding: 0.9rem 1.1rem;
+  margin-top: -1.2rem;
+  margin-bottom: 2.5rem;
+  background: rgba(30,51,85,0.03);
+  border-radius: 0 4px 4px 0;
+}
+
+/* ============================================================
    ARTICLE — Back nav
    ============================================================ */
 .post-nav {
