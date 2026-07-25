@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://shierlytherapy.com.au/</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/about/</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/how-i-can-help/</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/faq/</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/contact/</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://shierlytherapy.com.au/blog/</loc>
+    <lastmod>2026-07-10</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/blog/counsellor-psychotherapist-psychologist.html</loc>
+    <lastmod>2026-07-08</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/blog/what-to-expect-in-therapy.html</loc>
+    <lastmod>2026-07-25</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/blog/5-signs-therapy-might-help.html</loc>
+    <lastmod>2026-07-26</lastmod>
+  </url>
+
+  <!-- Legal -->
+  <url>
+    <loc>https://shierlytherapy.com.au/privacy-policy/</loc>
+    <lastmod>2026-07-08</lastmod>
+  </url>
+
+</urlset>
