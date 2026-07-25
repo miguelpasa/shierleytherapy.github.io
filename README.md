@@ -2,11 +2,13 @@
 
 Marketing site for **Shierly Therapy** — counselling & psychotherapy in East Melbourne, VIC, and online across Australia.
 
-A single-page static site with a fullscreen masked-parallax hero and GSAP scroll animations, in a warm, comfy palette. No build step — just HTML, CSS and JS.
+A multi-page static site with a fullscreen hero and GSAP scroll animations, in a warm navy palette. No build step — just HTML, CSS and JS.
+
+Live site: **https://www.shierlytherapy.com.au**
 
 ## Project brief
 
-This site is a **replacement** for the existing live site at https://www.shierlytherapy.com.au.
+This site is a **replacement** for the previous live site.
 
 - **Copy:** Match the copy from the live site exactly (same wording, same sections).
 - **Colour palette:** Use the same colour palette as the live site.
@@ -17,27 +19,33 @@ This site is a **replacement** for the existing live site at https://www.shierly
 ## Structure
 
 ```
-index.html              # all page content (single scroll)
-assets/css/styles.css   # styles + warm palette (CSS custom properties at the top)
-assets/js/main.js       # Lenis smooth scroll + GSAP/ScrollTrigger animations
-assets/images/          # Unsplash photography (see credits below)
-.nojekyll               # tells GitHub Pages to serve every file as-is
+index.html                                  # Homepage
+about/index.html                            # About Shierly
+how-i-can-help/index.html                   # Areas of support
+faq/index.html                              # Frequently asked questions
+contact/index.html                          # Contact & enquiry form
+blog/index.html                             # Blog listing
+blog/counsellor-psychotherapist-psychologist.html  # Blog article
+privacy-policy/index.html                   # Privacy policy
+assets/css/styles.css                       # Global styles + colour palette (CSS custom properties at top)
+assets/css/blog.css                         # Blog-specific styles
+assets/js/main.js                           # Lenis smooth scroll + GSAP/ScrollTrigger animations + form toast
+assets/images/                              # Approved photography and logos
+CNAME                                       # Custom domain (shierlytherapy.com.au)
+.nojekyll                                   # Tells GitHub Pages to serve every file as-is
 ```
 
-GSAP, ScrollTrigger and Lenis are loaded from CDN (jsDelivr); fonts (Fraunces + DM Sans) from Google Fonts.
+GSAP, ScrollTrigger, and Lenis are loaded from CDN (jsDelivr). Fonts (Cinzel + Lato) are loaded from Google Fonts.
 
 ## Editing content
 
-All copy lives in `index.html`. To retune colours, edit the custom properties at the top of `assets/css/styles.css` (`--cream`, `--terracotta`, `--sage`, `--ink`, …).
+All copy lives in the relevant HTML file for each page. To retune colours, edit the custom properties at the top of `assets/css/styles.css` (`--navy`, `--cream`, `--sage`, `--terracotta`, …).
 
-## ⚠️ Contact form — required setup
+## Contact form
 
-The contact form posts to **Formspree**. Before submissions work:
+All enquiry forms use **Web3Forms** (`https://api.web3forms.com/submit`). The access key is already configured — forms are live and delivering to the inbox. No further setup required.
 
-1. Create a free form at https://formspree.io and copy your form ID.
-2. In `index.html`, find `action="https://formspree.io/f/YOUR_FORM_ID"` and replace `YOUR_FORM_ID`.
-
-Until then the form is styled and functional but won't deliver messages. The email (`hello@shierlytherapy.com.au`) and SMS links work regardless.
+A toast notification confirms submission to the user.
 
 ## Local preview
 
@@ -48,27 +56,33 @@ python -m http.server 8000
 
 ## Deploy (GitHub Pages)
 
-1. Push to GitHub. For a root site (`https://<user>.github.io`), the repo must be named **exactly** `<user>.github.io`.
-   - Note: this folder is spelled `shierleytherapy.github.io` (extra "e"). If you want the root URL, rename the repo to match your username; otherwise it will serve under a project subpath like `https://<user>.github.io/<repo>/`.
-2. Repo **Settings → Pages → Build and deployment → Deploy from a branch**, select `main` / `/ (root)`.
-3. Wait for the green deploy; your site is live.
+The site deploys automatically from the `main` branch via GitHub Pages.
 
-### Optional: custom domain (shierlytherapy.com.au)
+1. Push to `main`.
+2. GitHub Pages builds and deploys from the repo root.
+3. The custom domain `shierlytherapy.com.au` is set via the `CNAME` file and configured in **Settings → Pages**.
 
-1. Add a file named `CNAME` at the repo root containing a single line: `shierlytherapy.com.au`
-2. At your DNS provider, point the domain at GitHub Pages:
-   - `A` records for the apex → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - (or a `CNAME` for `www` → `<user>.github.io`)
-3. In Settings → Pages, set the custom domain and enable **Enforce HTTPS**.
+### DNS (custom domain)
+
+The apex domain is pointed at GitHub Pages with the following `A` records:
+
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+HTTPS is enforced via **Settings → Pages → Enforce HTTPS**.
 
 ## Accessibility & motion
 
-- All animations honour `prefers-reduced-motion` and content is fully visible if JavaScript fails to load.
+- All animations honour `prefers-reduced-motion`; content is fully visible if JavaScript fails to load.
 - Skip link, semantic landmarks, focus styles, and alt text are included.
 
 ## Image credits
 
-All assets must be sourced from the approved Google Drive folder:
-https://drive.google.com/drive/folders/1QHuXifazU8jCK-pb92xf5OEUHTULGJh6
+All assets are sourced from the approved Google Drive folder:
+https://drive.google.com/drive/folders/1QHuXifazU8jCK-bp92xf5OEUHTULGJh6
 
-Do **not** use Unsplash or any other third-party image source. The placeholder Unsplash images currently in `assets/images/` are temporary and must be replaced with approved assets before launch.
+Do **not** use Unsplash or any other third-party image source.
