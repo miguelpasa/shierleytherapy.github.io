@@ -248,9 +248,172 @@
     if (dy > 40 || Math.abs(dx) > 60) hideToast();
   }, { passive: true });
 
+  /* ---------- custom "Preferred contact method" dropdown ---------- */
+  var dropdownIdCounter = 0;
+
+  function initContactDropdown(wrapper) {
+    var trigger = wrapper.querySelector(".contact__dropdown-trigger");
+    var valueEl = wrapper.querySelector(".contact__dropdown-value");
+    var panel = wrapper.querySelector(".contact__dropdown-panel");
+    var hiddenInput = wrapper.querySelector('input[type="hidden"]');
+    var errorEl = wrapper.querySelector(".contact__dropdown-error");
+    var labelEl = wrapper.querySelector(".contact__dropdown-label");
+    var options = Array.prototype.slice.call(wrapper.querySelectorAll(".contact__dropdown-option"));
+    if (!trigger || !panel || !hiddenInput || !options.length) return null;
+
+    var uid = "contact-dropdown-" + (++dropdownIdCounter);
+    panel.id = uid + "-listbox";
+    trigger.setAttribute("role", "combobox");
+    trigger.setAttribute("aria-controls", panel.id);
+    trigger.setAttribute("aria-activedescendant", "");
+    options.forEach(function (opt, i) {
+      opt.id = uid + "-opt-" + i;
+      opt.setAttribute("aria-selected", "false");
+    });
+    if (labelEl) {
+      labelEl.id = uid + "-label";
+      trigger.setAttribute("aria-labelledby", labelEl.id);
+      panel.setAttribute("aria-labelledby", labelEl.id);
+    }
+
+    var placeholder = valueEl.textContent;
+    var activeIndex = -1;
+    var changeCallbacks = [];
+
+    function isOpen() { return !panel.hidden; }
+
+    function setActive(index) {
+      if (index < 0) index = options.length - 1;
+      if (index >= options.length) index = 0;
+      activeIndex = index;
+      options.forEach(function (opt, i) { opt.classList.toggle("is-active", i === index); });
+      trigger.setAttribute("aria-activedescendant", options[index].id);
+      if (options[index].scrollIntoView) options[index].scrollIntoView({ block: "nearest" });
+    }
+
+    function open() {
+      if (isOpen()) return;
+      panel.hidden = false;
+      wrapper.classList.add("is-open");
+      trigger.setAttribute("aria-expanded", "true");
+      var selectedIndex = -1;
+      options.forEach(function (opt, i) { if (opt.getAttribute("aria-selected") === "true") selectedIndex = i; });
+      setActive(selectedIndex >= 0 ? selectedIndex : 0);
+    }
+
+    function close() {
+      if (!isOpen()) return;
+      panel.hidden = true;
+      wrapper.classList.remove("is-open");
+      trigger.setAttribute("aria-expanded", "false");
+      activeIndex = -1;
+    }
+
+    function setInvalid(isInvalid) {
+      wrapper.classList.toggle("is-invalid", isInvalid);
+      if (errorEl) errorEl.hidden = !isInvalid;
+    }
+
+    function selectOption(opt) {
+      options.forEach(function (o) { o.setAttribute("aria-selected", o === opt ? "true" : "false"); });
+      hiddenInput.value = opt.getAttribute("data-value");
+      valueEl.textContent = opt.textContent;
+      valueEl.classList.remove("contact__dropdown-value--placeholder");
+      setInvalid(false);
+      close();
+      trigger.focus();
+      changeCallbacks.forEach(function (cb) { cb(hiddenInput.value); });
+    }
+
+    function reset() {
+      options.forEach(function (o) { o.setAttribute("aria-selected", "false"); });
+      hiddenInput.value = "";
+      valueEl.textContent = placeholder;
+      valueEl.classList.add("contact__dropdown-value--placeholder");
+      setInvalid(false);
+      close();
+    }
+
+    trigger.addEventListener("click", function () {
+      if (isOpen()) { close(); } else { open(); }
+    });
+
+    trigger.addEventListener("keydown", function (e) {
+      var key = e.key;
+      if (key === "ArrowDown") {
+        e.preventDefault();
+        if (!isOpen()) { open(); } else { setActive(activeIndex + 1); }
+      } else if (key === "ArrowUp") {
+        e.preventDefault();
+        if (!isOpen()) { open(); } else { setActive(activeIndex - 1); }
+      } else if (key === "Home") {
+        if (isOpen()) { e.preventDefault(); setActive(0); }
+      } else if (key === "End") {
+        if (isOpen()) { e.preventDefault(); setActive(options.length - 1); }
+      } else if (key === "Enter" || key === " ") {
+        e.preventDefault();
+        if (isOpen()) { selectOption(options[activeIndex]); } else { open(); }
+      } else if (key === "Escape") {
+        if (isOpen()) { e.preventDefault(); close(); }
+      } else if (key === "Tab") {
+        close();
+      } else if (key.length === 1) {
+        var lower = key.toLowerCase();
+        for (var i = 0; i < options.length; i++) {
+          if (options[i].textContent.trim().toLowerCase().indexOf(lower) === 0) {
+            if (!isOpen()) open();
+            setActive(i);
+            break;
+          }
+        }
+      }
+    });
+
+    options.forEach(function (opt, i) {
+      opt.addEventListener("mouseenter", function () { setActive(i); });
+      opt.addEventListener("click", function () { selectOption(opt); });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!wrapper.contains(e.target)) close();
+    });
+
+    return {
+      getValue: function () { return hiddenInput.value; },
+      reset: reset,
+      setInvalid: setInvalid,
+      focus: function () { trigger.focus(); },
+      onChange: function (cb) { changeCallbacks.push(cb); }
+    };
+  }
+
   document.querySelectorAll(".contact__form").forEach(function (form) {
+    var dropdownEl = form.querySelector(".contact__dropdown");
+    var dropdown = dropdownEl ? initContactDropdown(dropdownEl) : null;
+    var phoneInput = form.querySelector('input[name="phone"]');
+    var phoneNote = phoneInput && phoneInput.closest("label").querySelector("small");
+    var phoneNoteDefault = phoneNote ? phoneNote.textContent : "";
+
+    function syncContactPref(value) {
+      var needsPhone = value === "SMS";
+      if (phoneInput) phoneInput.required = needsPhone;
+      if (phoneNote) phoneNote.textContent = needsPhone ? "(required for SMS)" : phoneNoteDefault;
+    }
+
+    if (dropdown) {
+      dropdown.onChange(syncContactPref);
+      syncContactPref(dropdown.getValue());
+    }
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      if (dropdown && !dropdown.getValue()) {
+        dropdown.setInvalid(true);
+        dropdown.focus();
+        return;
+      }
+
       var btn = form.querySelector('[type="submit"]');
       var orig = btn.textContent;
       btn.disabled = true;
@@ -260,6 +423,8 @@
         .then(function (json) {
           if (json.success) {
             form.reset();
+            if (dropdown) dropdown.reset();
+            syncContactPref("");
             showToast("Thank you for your enquiry. I've received your message and will get back to you within 1–2 business days.");
           } else {
             showToast("Something went wrong. Please try again or email directly.");
