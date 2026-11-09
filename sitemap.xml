@@ -4,7 +4,7 @@
   <!-- Core pages -->
   <url>
     <loc>https://shierlytherapy.com.au/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://shierlytherapy.com.au/about/</loc>
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://shierlytherapy.com.au/how-i-can-help/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://shierlytherapy.com.au/faq/</loc>
@@ -26,7 +26,11 @@
   <!-- Blog -->
   <url>
     <loc>https://shierlytherapy.com.au/blog/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://shierlytherapy.com.au/blog/can-attachment-styles-change-over-time.html</loc>
+    <lastmod>2026-11-09</lastmod>
   </url>
   <url>
     <loc>https://shierlytherapy.com.au/blog/counsellor-psychotherapist-psychologist.html</loc>
@@ -44,7 +48,7 @@
   <!-- Legal -->
   <url>
     <loc>https://shierlytherapy.com.au/privacy-policy/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-11-09</lastmod>
   </url>
 
 </urlset>
