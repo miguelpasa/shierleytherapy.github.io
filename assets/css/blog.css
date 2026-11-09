@@ -190,7 +190,8 @@
 }
 
 .post-body__inner ul {
-  list-style: none; padding: 0;
+  list-style: disc;
+  padding-left: 1.5rem;
   margin-bottom: 1.4rem;
   display: flex; flex-direction: column; gap: 0.5rem;
 }
@@ -198,10 +199,16 @@
   font-family: var(--body);
   font-size: clamp(1rem, 0.95rem + 0.3vw, 1.15rem);
   line-height: 1.75; color: var(--ink-soft);
-  padding-left: 1.5rem; position: relative;
 }
-.post-body__inner ul li::before {
-  content: "—"; position: absolute; left: 0; color: var(--blue-accent);
+.post-body__inner ul li::marker {
+  color: var(--blue-accent);
+}
+.post-body__inner ul.post-references {
+  list-style: none;
+  padding-left: 0;
+  font-size: 0.92rem;
+  line-height: 1.8;
+  gap: 0.85rem;
 }
 
 /* ============================================================
